@@ -58,7 +58,7 @@ public class Player : MonoBehaviour
         Debug.Log("va cham vao: " + other.gameObject.tag);
         if (other.gameObject.tag == "door")
         {
-            SceneManager.LoadScene("Level1");
+            SceneManager.LoadScene("Menu");
         }
     }
 
