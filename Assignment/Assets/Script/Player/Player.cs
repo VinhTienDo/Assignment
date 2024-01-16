@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -20,10 +21,13 @@ public class Player : MonoBehaviour
     [SerializeField] private LayerMask whatIsGround;
     [SerializeField] private float groundCheckDistance;
 
+    public Text Diem;
+    int score = 0;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        Diem = GameObject.Find("Diem").GetComponent<Text>();
     }
 
     // Update is called once per frame
@@ -43,7 +47,9 @@ public class Player : MonoBehaviour
 
         if (other.gameObject.tag == "coin")
         {
+            score++;
             Destroy(other.gameObject);
+            Diem.text = "Score: " + score.ToString();
         }
     }
 
