@@ -20,7 +20,7 @@ TagManager:
   - Player
   - obstacles
   - text
-  - 
+  - button
   - 
   - 
   - 
@@ -59,4 +59,7 @@ TagManager:
     locked: 0
   - name: text
     uniqueID: 983695045
+    locked: 0
+  - name: button
+    uniqueID: 924351205
     locked: 0
