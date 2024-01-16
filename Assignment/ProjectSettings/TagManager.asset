@@ -8,6 +8,8 @@ TagManager:
   - Platform
   - door
   - coin
+  - trap
+  - heart
   layers:
   - Default
   - TransparentFX

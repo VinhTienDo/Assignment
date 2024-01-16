@@ -22,12 +22,15 @@ public class Player : MonoBehaviour
     [SerializeField] private float groundCheckDistance;
 
     public Text Diem;
+    public Text Mau;
     int score = 0;
+    int heart = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         Diem = GameObject.Find("Diem").GetComponent<Text>();
+        Mau = GameObject.Find("Mau").GetComponent<Text>();
     }
 
     // Update is called once per frame
@@ -50,6 +53,22 @@ public class Player : MonoBehaviour
             score++;
             Destroy(other.gameObject);
             Diem.text = "Score: " + score.ToString();
+        }
+        else if (other.gameObject.tag == "heart")
+        {
+            heart++;
+            Destroy(other.gameObject);
+            Mau.text = "x " + heart.ToString();
+
+        }
+        else if (other.gameObject.tag == "trap")
+        {
+            heart--;
+            Mau.text = "x " + heart.ToString();
+            if (heart <= 0)
+            {
+                Application.LoadLevel("Menu");
+            }
         }
     }
 
