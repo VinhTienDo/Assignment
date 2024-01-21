@@ -100,6 +100,7 @@ public class Player : MonoBehaviour
         rigidbody2D.velocity = new Vector2(xInput * moveSpeed, rigidbody2D.velocity.y);
     }
 
+    // test
     private void Jump()
     {
         if (isGrounded)
