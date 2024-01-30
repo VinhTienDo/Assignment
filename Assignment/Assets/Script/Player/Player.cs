@@ -96,6 +96,11 @@ public class Player : MonoBehaviour
         {
             SceneManager.LoadScene("Menu");
         }
+        else if (other.gameObject.tag == "nextlevel")
+        {
+            
+            SceneManager.LoadScene("Scene2");
+        }
     }
 
     private void CollisionCheck()

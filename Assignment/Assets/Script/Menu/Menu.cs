@@ -20,4 +20,8 @@ public class Menu : MonoBehaviour
     {
         Application.LoadLevel("Scene1");
     }
+    public void Level2()
+    {
+        Application.LoadLevel("Scene2");
+    }
 }
