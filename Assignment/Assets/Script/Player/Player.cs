@@ -26,11 +26,17 @@ public class Player : MonoBehaviour
     int score = 0;
     int heart = 0;
 
+    public AudioClip jump;
+    public AudioClip collectCoin;
+    public AudioClip collectheart;
+    private AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
         Diem = GameObject.Find("Diem").GetComponent<Text>();
         Mau = GameObject.Find("Mau").GetComponent<Text>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -52,16 +58,27 @@ public class Player : MonoBehaviour
         {
             score++;
             Destroy(other.gameObject);
+            audioSource.PlayOneShot(collectCoin);
             Diem.text = "Score: " + score.ToString();
         }
         else if (other.gameObject.tag == "heart")
         {
             heart++;
+            audioSource.PlayOneShot(collectheart);
             Destroy(other.gameObject);
             Mau.text = "x " + heart.ToString();
 
         }
         else if (other.gameObject.tag == "trap")
+        {
+            heart--;
+            Mau.text = "x " + heart.ToString();
+            if (heart <= 0)
+            {
+                Application.LoadLevel("Menu");
+            }
+        }
+        else if (other.gameObject.tag == "enemy")
         {
             heart--;
             Mau.text = "x " + heart.ToString();
@@ -105,6 +122,7 @@ public class Player : MonoBehaviour
     {
         if (isGrounded)
         {
+            audioSource.PlayOneShot(jump);
             rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, jumpForce);
         }
 

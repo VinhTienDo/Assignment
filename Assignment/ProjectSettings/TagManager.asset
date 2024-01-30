@@ -10,6 +10,7 @@ TagManager:
   - coin
   - trap
   - heart
+  - enemy
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - obstacles
   - text
   - button
-  - 
+  - enemy
   - 
   - 
   - 
@@ -61,6 +62,9 @@ TagManager:
     locked: 0
   - name: text
     uniqueID: 983695045
+    locked: 0
+  - name: enemy
+    uniqueID: 4117425811
     locked: 0
   - name: button
     uniqueID: 924351205
