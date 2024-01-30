@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
     public Text Diem;
     public Text Mau;
     int score = 0;
-    int heart = 0;
+    int heart = 2;
 
     public AudioClip jump;
     public AudioClip collectCoin;
