@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -20,6 +20,8 @@ public class Player : MonoBehaviour
     private bool isGrounded;
     [SerializeField] private LayerMask whatIsGround;
     [SerializeField] private float groundCheckDistance;
+    [SerializeField] float jumpSpeed = 10f;
+    bool isSpacePressed = false;
 
     public Text Diem;
     public Text Mau;
@@ -29,6 +31,7 @@ public class Player : MonoBehaviour
     public AudioClip jump;
     public AudioClip collectCoin;
     public AudioClip collectheart;
+    public AudioClip triggerTrap;
     private AudioSource audioSource;
 
     // Start is called before the first frame update
@@ -56,7 +59,7 @@ public class Player : MonoBehaviour
 
         if (other.gameObject.tag == "coin")
         {
-            score++;
+            score+=5;
             Destroy(other.gameObject);
             audioSource.PlayOneShot(collectCoin);
             Diem.text = "Score: " + score.ToString();
@@ -73,6 +76,7 @@ public class Player : MonoBehaviour
         {
             heart--;
             Mau.text = "x " + heart.ToString();
+            audioSource.PlayOneShot(triggerTrap);
             if (heart <= 0)
             {
                 Application.LoadLevel("Menu");
@@ -115,7 +119,18 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Jump();
+            //isSpacePressed = true; // Đánh dấu rằng nút Space đã được nhấn
+            //rigidbody2D.AddForce(new Vector2(0, 6f), ForceMode2D.Impulse);
+            //Debug.Log("click");
         }
+        //else if (Input.GetKeyUp(KeyCode.Space))
+        //{
+        //    isSpacePressed = false; // Đánh dấu rằng nút Space không được nhấn nữa
+        //}
+        //if (isSpacePressed)
+        //{
+        //    rigidbody2D.AddForce(new Vector2(0, 6f), ForceMode2D.Force); // Sử dụng ForceMode2D.Force để áp dụng lực liên tục
+        //}
     }
     private void Movement()
     {

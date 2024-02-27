@@ -140,6 +140,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2227607401482729866, guid: dac6d8b4ef02ab54482baddc2c7849e7, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 2227607401482729866, guid: dac6d8b4ef02ab54482baddc2c7849e7, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.26
+      objectReference: {fileID: 0}
     - target: {fileID: 3678469803294464837, guid: dac6d8b4ef02ab54482baddc2c7849e7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.48
@@ -180,6 +188,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5168404236066213796, guid: dac6d8b4ef02ab54482baddc2c7849e7, type: 3}
+      propertyPath: triggerTrap
+      value: 
+      objectReference: {fileID: 8300000, guid: f87d5ec42679a0444b9e785e8e6ed46b, type: 3}
+    - target: {fileID: 6730383100336388612, guid: dac6d8b4ef02ab54482baddc2c7849e7, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2082778459, guid: 93a45cecefcdf8749be857a9d5440177, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13906,6 +13922,10 @@ PrefabInstance:
     - target: {fileID: 231108296140546485, guid: d18aeb3be297e2e418edf2c3683cd2fe, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 384109078760279162, guid: d18aeb3be297e2e418edf2c3683cd2fe, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -646
       objectReference: {fileID: 0}
     - target: {fileID: 5580975873406141421, guid: d18aeb3be297e2e418edf2c3683cd2fe, type: 3}
       propertyPath: m_Text
