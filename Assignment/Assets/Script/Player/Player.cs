@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     private float xInput;
     public float moveSpeed;
     public float jumpForce;
+    public GameObject EndGame;
     public Animator anim;
     [SerializeField] private bool isRun;
 
@@ -77,9 +78,11 @@ public class Player : MonoBehaviour
             heart--;
             Mau.text = "x " + heart.ToString();
             audioSource.PlayOneShot(triggerTrap);
+            
             if (heart <= 0)
             {
-                Application.LoadLevel("Menu");
+                EndGame.SetActive(true);
+                Time.timeScale = 0;
             }
         }
         else if (other.gameObject.tag == "enemy")
@@ -89,7 +92,8 @@ public class Player : MonoBehaviour
             audioSource.PlayOneShot(triggerTrap);
             if (heart <= 0)
             {
-                Application.LoadLevel("Menu");
+                EndGame.SetActive(true);
+                Time.timeScale = 0;
             }
         }
     }
@@ -145,6 +149,7 @@ public class Player : MonoBehaviour
         {
             audioSource.PlayOneShot(jump);
             rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, jumpForce);
+
         }
 
     }
@@ -186,5 +191,11 @@ public class Player : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawLine(transform.position, new Vector3(transform.position.x, transform.position.y - groundCheckDistance));
+    }
+    public void restartGame()
+    {
+        SceneManager.LoadScene("Scene1");
+        EndGame.SetActive(false);
+        Time.timeScale = 1f;
     }
 }
