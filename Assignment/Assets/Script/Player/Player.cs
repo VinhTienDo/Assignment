@@ -86,6 +86,7 @@ public class Player : MonoBehaviour
         {
             heart--;
             Mau.text = "x " + heart.ToString();
+            audioSource.PlayOneShot(triggerTrap);
             if (heart <= 0)
             {
                 Application.LoadLevel("Menu");
