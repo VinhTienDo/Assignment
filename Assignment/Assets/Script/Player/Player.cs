@@ -60,10 +60,10 @@ public class Player : MonoBehaviour
 
         if (other.gameObject.tag == "coin")
         {
-            score+=5;
+            score++;
             Destroy(other.gameObject);
             audioSource.PlayOneShot(collectCoin);
-            Diem.text = "Score: " + score.ToString();
+            Diem.text = " " + score.ToString();
         }
         else if (other.gameObject.tag == "heart")
         {
@@ -103,7 +103,7 @@ public class Player : MonoBehaviour
         Debug.Log("va cham vao: " + other.gameObject.tag);
         if (other.gameObject.tag == "door")
         {
-            SceneManager.LoadScene("Menu");
+            SceneManager.LoadScene("Scene2");
         }
         else if (other.gameObject.tag == "nextlevel")
         {
